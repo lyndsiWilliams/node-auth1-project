@@ -12,6 +12,8 @@ router.use('/users', usersRouter);
 
 
 // CRUD
+
+// Hashes authentication header
 router.get('/hash', (req, res) => {
   // Get authentication header
   const authentication = req.headers.authentication;
@@ -21,6 +23,7 @@ router.get('/hash', (req, res) => {
   res.json({ originalValue: authentication, hash });
 });
 
+// The api is alive
 router.get('/', (req, res) => {
   res.json({ api: "It's alive" });
 });
